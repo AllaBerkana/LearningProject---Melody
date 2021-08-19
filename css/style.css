@@ -121,8 +121,8 @@ li {
     color: #635854;
     font-family: "Bebas Neue",
         sans-serif;
-        font-weight: 400;
-        font-size: 37px;
+    font-weight: 400;
+    font-size: 37px;
 }
 
 .counter__groupe {
@@ -138,13 +138,11 @@ li {
     cursor: pointer;
 }
 
-.counter_up {}
-
 .counter {
     color: #635854;
     font-size: 75px;
     font-family: "Bebas Neue",
-    sans-serif;
+        sans-serif;
     font-weight: 400;
 }
 
