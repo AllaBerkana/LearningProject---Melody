@@ -135,6 +135,26 @@ $(document).ready(function () {
 
         chooseFlatImg();
         chooseFlat();
+    
+    /*
+   const flatsPath = $('.modal-image path');
+   const flatsLink = $('.flat-link');
+    
+    function deleteClass() {
+    flatsPath.removeClass('current-flat');
+    flatsLink.removeClass('current-flat');
+  }
+
+  flatsPath.on('mouseover', function() {
+    deleteClass();
+    $(`[data-flat-link="${$(this).attr('data-flat')}"]`).toggleClass('current-flat');
+  });
+
+  flatsLink.on('mouseover', function() {
+    deleteClass();
+    $(`[data-flat="${$(this).attr('data-flat-link')}"]`).toggleClass('current-flat');
+  });
+    */
 
 });
 
