@@ -217,7 +217,8 @@ path.current-floor {
     max-width: 1000px;
     min-height: 565px;
     background-color: #fff;
-    /*анимациядляокна*/opacity: 0;
+    /*анимациядляокна*/
+    opacity: 0;
     transform: translateY(-10%);
     -webkit-transform: translateY(-10%);
     -moz-transform: translateY(-10%);
@@ -230,7 +231,8 @@ path.current-floor {
     -o-transition: opacity 0.2s, transform 02s;
     transition-delay: 0.2s;
 }
-.modal_open>.modal__dialouge{
+
+.modal_open>.modal__dialouge {
     opacity: 1;
     transform: translateY(0);
     -webkit-transform: translateY(0);
@@ -306,6 +308,10 @@ path.current-floor {
     opacity: 1;
 }
 
-.flat__item.current-item{
-    background-color: #3596F5;
+.flat__item.current-flat {
+    background-color: rgba(50, 148, 245, 0.5);
 }
+
+/*.flat__item.current-item{
+    background-color: rgba(50, 148, 245, 0.5);
+}*/
