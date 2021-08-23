@@ -88,73 +88,121 @@ $(document).ready(function () {
 
 
     /* ------ Flats JS */
+    /*
+            const flatsPath = document.querySelectorAll('.flats path');
+            const flatItem = document.querySelectorAll('.flat__item');
 
-        const flatsPath = document.querySelectorAll('.flats path');
-        const flatItem = document.querySelectorAll('.flat__item');
+            const chooseFlatImg = () => {
+                flatsPath.forEach((img) => {
 
-        const chooseFlatImg = () => {
-            flatsPath.forEach((img) => {
+                    img.addEventListener('click', (event) => {
+                        const target = event.target;
+                        const flatImg = img.dataset.flat;
 
-                img.addEventListener('click', (event) => {
-                    const target = event.target;
-                    const flatImg = img.dataset.flat;
-                    if (target.classList.contains('current-flat')) {
-                        target.classList.remove('current-flat');
-                    } else {
-                        target.classList.add('current-flat');
-                    }
-
-                    flatItem.forEach((room) => {
-                        const roomNum = room.dataset.flatId;
-                        if (flatImg === roomNum) {
-                            room.classList.toggle('current-item');
+                        if (target.classList.contains('current-flat')) {
+                            target.classList.remove('current-flat');
+                        } else {
+                            target.classList.add('current-flat');
                         }
+
+                        flatItem.forEach((room) => {
+                            const roomNum = room.dataset.flatId;
+                            if (flatImg === roomNum) {
+                                room.classList.toggle('current-flat');
+                            }
+                        });
                     });
                 });
-            });
-        };
+            };
 
-        const chooseFlat = () => {
-            flatItem.forEach((item) => {
-                item.addEventListener('click', () => {
+            const chooseFlat = () => {
+                flatItem.forEach((item) => {
+                    item.addEventListener('click', () => {
 
-                    if (item.classList.contains('current-item')) {
-                        item.classList.remove('current-item');
-                    } else {
-                        item.classList.add('current-item');
-                    }
-
-                    flatsPath.forEach((img) => {
-                        if (img.dataset.flat === item.dataset.flatId) {
-                            img.classList.toggle('current-flat');
+                        if (item.classList.contains('current-flat')) {
+                            item.classList.remove('current-flat');
+                        } else {
+                            item.classList.add('current-flat');
                         }
+
+                        flatsPath.forEach((img) => {
+                            if (img.dataset.flat === item.dataset.flatId) {
+                                img.classList.toggle('current-flat');
+                            }
+                        })
                     })
                 })
-            })
-        };
+            };
 
-        chooseFlatImg();
-        chooseFlat();
-    
-    /*
-   const flatsPath = $('.modal-image path');
-   const flatsLink = $('.flat-link');
-    
-    function deleteClass() {
-    flatsPath.removeClass('current-flat');
-    flatsLink.removeClass('current-flat');
-  }
+            chooseFlatImg();
+            chooseFlat();
 
-  flatsPath.on('mouseover', function() {
-    deleteClass();
-    $(`[data-flat-link="${$(this).attr('data-flat')}"]`).toggleClass('current-flat');
-  });
-
-  flatsLink.on('mouseover', function() {
-    deleteClass();
-    $(`[data-flat="${$(this).attr('data-flat-link')}"]`).toggleClass('current-flat');
-  });
     */
+
+    const flatsPath = document.querySelectorAll('.flats path');
+    const flatItem = document.querySelectorAll('.flat__item');
+    
+
+    const chooseFlatImg = () => {
+        flatsPath.forEach((item) => {
+
+            item.addEventListener('click', () => {
+                const flatImg = item.dataset.flat;
+
+                flatItem.forEach((room) => {
+                    const roomNum = room.dataset.flatId;
+
+                    if (flatImg === roomNum) {
+                        room.classList.toggle('current-flat');
+                        item.classList.toggle('current-flat');
+                    }
+                });
+            });
+        });
+    };
+
+    const chooseFlat = () => {
+        flatItem.forEach((item) => {
+
+            item.addEventListener('click', () => {
+                flatsPath.forEach((img) => {
+
+                    if (img.dataset.flat === item.dataset.flatId) {
+                        img.classList.toggle('current-flat');
+                        item.classList.toggle('current-flat');
+                    }
+                });
+            })
+        })
+    };
+
+    chooseFlatImg();
+    chooseFlat();
+
+    /*
+        const flatsPath = $('.flats path');
+        const flatItem = $('.flat__item');
+
+        function deleteClass() {
+            flatsPath.removeClass('current-flat');
+            flatItem.removeClass('current-flat');
+        }
+
+        flatsPath.on('mouseover', function () {
+            deleteClass();
+            $(`[data-flat-id="${$(this).attr('data-flat')}"]`).toggleClass('current-flat');
+        });
+
+        flatItem.on('mouseover', function () {
+            deleteClass();
+            $(`[data-flat="${$(this).attr('data-flat-id')}"]`).toggleClass('current-flat');
+        });
+    */
+
 
 });
 
+/*
+data-flat
+data-flat-id
+*/
